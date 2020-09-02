@@ -1,8 +1,4 @@
-FROM mcr.microsoft.com/dotnet/core/aspnet:3.1-buster-slim AS base
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.1-buster-slim
 WORKDIR /app
-EXPOSE 80
-
-FROM base AS final
-WORKDIR /app
-COPY publish /app 
+COPY publish /app
 ENTRYPOINT ["dotnet", "PracticaContenedores.dll"]
